@@ -43,7 +43,6 @@ public class TodoController {
 		}
 	}
 
-
 	@GetMapping
 	public ResponseEntity<?> retrieveTodo(@AuthenticationPrincipal String userId) {
 		List<TodoEntity> entities = service.retrieve(userId);
@@ -60,7 +59,6 @@ public class TodoController {
 		ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
 		return ResponseEntity.ok().body(response);
 	}
-
 
 	@PutMapping
 	public ResponseEntity<?> updateTodo(
